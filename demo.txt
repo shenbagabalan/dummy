@@ -1,0 +1,45 @@
+
+
+Data to be sent to server <http request>
+	- AJAX REquest
+	- Send data
+Server to store db
+	- Schema
+	- Insert
+
+db data retrieve
+	- Read
+	- filter
+	
+Retrieve data from DB to server
+respond back with some data to client.
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  $("button").click(function(){
+    $.get("http://localhost:8080/", function(data, status){
+      // alert("Data: " + data + "\nStatus: " + status);
+      document.getElementById("demo").value = data;
+    });
+  });
+});
+</script>
+</head>
+<body>
+<input type="tetx" id="demo" />
+<button>Send an HTTP GET request to a page and get the result back</button>
+
+</body>
+</html>
+
+var http = require('http');
+
+http.createServer(function (req, res) {
+  res.writeHead(200, {'Content-Type': 'text/plain'});
+  res.end('Hello World!11111');
+}).listen(8080);
