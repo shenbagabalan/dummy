@@ -11,7 +11,7 @@ db data retrieve
 	- Read
 	- filter
 	
-Retrieve data from DB to server
+Retrieve data from DB to server.
 respond back with some data to client.
 
 
